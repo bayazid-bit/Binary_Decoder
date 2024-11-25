@@ -53,7 +53,7 @@ The results will be shown in the corresponding `Encoded Text` or `Decoded Text` 
 
 ## Screenshot
 
-![Binary Decoder Screenshot](screenshot.png)
+![Binary Decoder Screenshot](screenshot.jpg)
 
 ## Contributing
 
