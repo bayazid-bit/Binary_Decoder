@@ -15,16 +15,16 @@ class BinaryDecoderApp:
         self.tab_manager = ttk.Notebook(self.root)
         self.tab1 = ttk.Frame(self.tab_manager)
         self.tab2 = ttk.Frame(self.tab_manager)
-        self.tab_manager.add(self.tab1, text="Decoder")
+        self.tab_manager.add(self.tab1, text="Decoder" , )
         self.tab_manager.add(self.tab2, text="Encoder")
         self.tab_manager.pack(padx=10, pady=10)
         self.create_decoder_tab()
         self.create_encoder_tab()
 
     def create_decoder_tab(self):
-        binary_frame = ttk.LabelFrame(self.tab1, text="Binary Code")
+        binary_frame = ttk.LabelFrame(self.tab1, text="Binary Code" ,)
         binary_frame.pack(padx=10, pady=10)
-        self.binary_input = scrolledtext.ScrolledText(binary_frame, width=800, height=10, wrap="word", font=("Times New Roman", 10))
+        self.binary_input = scrolledtext.ScrolledText(binary_frame, width=800, height=10, wrap="word", font=("./Anonymous_Pro_I.ttf", 15))
         self.binary_input.pack(padx=10, pady=10)
 
         decode_button = ttk.Button(self.tab1, text="Decode", width=100, command=self.decode)
@@ -32,13 +32,13 @@ class BinaryDecoderApp:
 
         decoded_frame = ttk.LabelFrame(self.tab1, text="Decoded Text")
         decoded_frame.pack(padx=10, pady=10)
-        self.decoded_output = scrolledtext.ScrolledText(decoded_frame, width=800, height=15, font=("Times New Roman", 10), wrap="word")
+        self.decoded_output = scrolledtext.ScrolledText(decoded_frame, width=800, height=15, font=("./Anonymous_Pro_I.ttf", 15), wrap="word")
         self.decoded_output.pack(padx=10, pady=10)
 
     def create_encoder_tab(self):
         ascii_frame = ttk.LabelFrame(self.tab2, text="ASCII Code")
         ascii_frame.pack(padx=10, pady=10)
-        self.ascii_input = scrolledtext.ScrolledText(ascii_frame, width=800, height=10, wrap="word", font=("Times New Roman", 10))
+        self.ascii_input = scrolledtext.ScrolledText(ascii_frame, width=800, height=10, wrap="word", font=("./Anonymous_Pro_I.ttf", 15))
         self.ascii_input.pack(padx=10, pady=10)
 
         encode_button = ttk.Button(self.tab2, text="Encode", width=100, command=self.encode)
@@ -46,7 +46,7 @@ class BinaryDecoderApp:
 
         encoded_frame = ttk.LabelFrame(self.tab2, text="Encoded Text")
         encoded_frame.pack(padx=10, pady=10)
-        self.encoded_output = scrolledtext.ScrolledText(encoded_frame, width=800, height=15, font=("Times New Roman", 10), wrap="word")
+        self.encoded_output = scrolledtext.ScrolledText(encoded_frame, width=800, height=15, font=("./Anonymous_Pro_I.ttf", 15), wrap="word")
         self.encoded_output.pack(padx=10, pady=10)
 
     def encode(self):
@@ -69,8 +69,8 @@ class BinaryDecoderApp:
         binary_text = self.binary_input.get(1.0, END).strip()
         if binary_text:
             try:
-                # রেজেক্স
-                if re.match(r'^[01\s]+$', binary_text):  # Match binary digits and spaces
+              
+                if re.match(r'^[01\s]+$', binary_text): 
                     decoded_text = ''.join(chr(int(code, 2)) for code in binary_text.split())
                     self.decoded_output.delete(1.0, END)
                     self.decoded_output.insert(1.0, decoded_text)
