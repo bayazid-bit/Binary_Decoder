@@ -31,7 +31,7 @@ To run this project, follow these steps:
 
 3. Run the Python script:
     ```bash
-    python binary_decoder.py
+    python main.py
     ```
 
 ## How to Use
